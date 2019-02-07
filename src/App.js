@@ -1,28 +1,20 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./bootstrap";
+import React from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+import { makeStyles } from '@material-ui/styles';
+
+const useStyles = makeStyles({
+  root: (props) => ({
+    background: props.color
+  })
+});
+
+const App = () => {
+  const classes = useStyles({color: 'red'});
+
+  return (
+    <div className={classes.root} style={{display: 'block', height: 500, width: 500}}/>
+  );
 }
 
 export default App;
